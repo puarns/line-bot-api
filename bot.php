@@ -9,7 +9,7 @@ $bot = new BOT_API($channelSecret, $access_token);
 if (!empty($bot->isEvents)) 
 	$message = json_encode($bot->message);
 	$returnMessage = $message;
-	if($message == 'address') $returnMessage = 'Condo Parkland เพชรเกษม-ท่าพระ ห้อง 1835 ชั้น 18 เลขที่ 99/657 ถนน เพชรเกษม แขวงวัดท่าพระเขตบางกอกใหญ่ กรุงเทพมหานคร 10600';
+	if($message == 'address') $returnMessage = 'xxCondo Parkland เพชรเกษม-ท่าพระ ห้อง 1835 ชั้น 18 เลขที่ 99/657 ถนน เพชรเกษม แขวงวัดท่าพระเขตบางกอกใหญ่ กรุงเทพมหานคร 10600';
 	
 	$url = 'http://linebot.linetor.com/api.php';
 	$data = array('mid' => '123', 'message' => $message);
