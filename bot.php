@@ -6,9 +6,12 @@ $access_token  = 'eYrUwuYVBvWMCWaMOgVVpJ+340T6phdQcs/McASQpkttbwakaPsGBuKDiYA5at
 
 $bot = new BOT_API($channelSecret, $access_token);
 	
-if (!empty($bot->isEvents)) {
+if (!empty($bot->isEvents)) 
+	$message = json_encode($bot->message);
+	$returnMessage = $message;
+	if($message == 'address') $returnMessage = 'Condo Parkland เพชรเกษม-ท่าพระ ห้อง 1835 ชั้น 18 เลขที่ 99/657 ถนน เพชรเกษม แขวงวัดท่าพระเขตบางกอกใหญ่ กรุงเทพมหานคร 10600';
 		
-	$bot->replyMessageNew($bot->replyToken, json_encode($bot->message));
+	$bot->replyMessageNew($bot->replyToken, $returnMessage);
 
 	if ($bot->isSuccess()) {
 		echo 'Succeeded!';
